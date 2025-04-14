@@ -1,26 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Page</title>
-    <link rel="stylesheet" href="./style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game of Thrones Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0b0b0b;
+      color: #f5f5f5;
+    }
+    .hero {
+      height: 100vh;
+      background: url('./Westros.jpeg') center/contain repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.6);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      margin: 0;
+      color: #f0e6d2;
+      
+    }
+    .hero p {
+      font-family: 'Crimson Pro', serif;
+      color: #c8bfae;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    a{
+           text-decoration: none; 
+           
+           
+        }
+
+        button {
+          display: block;
+          margin: 2rem auto;
+          padding: 0.75rem 2rem;
+          font-size: 1rem;
+          background-color:#1a1a1a;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          color:#f0e6d2;
+           font-weight: 900;
+           box-shadow: 0 0 10px rgba(240, 230, 210, 0.3);
+        }
+        button:hover {
+          
+  background-color: #2e2e2e;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); /* subtle gold glow */
+  transform: scale(1.02);
+
+        }
+
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .carousel-wrapper {
+      width: 50vw; /* 50% of screen width */
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center; /* Center the carousel content */
+      align-items: center; /* Center the carousel vertically within its container */
+      margin: 0 auto; /* Center the wrapper horizontally */
+    }
+
+    .carousel-wrapper:hover .carousel-track {
+      animation-play-state: paused; /* Pause the animation when hovered */
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll 30s linear infinite;
+    }
+
+    .carousel-slide {
+      flex: 0 0 auto;
+      width: 15%; /* 4 images per wrapper width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 48px;
+      height: 48px;
+      
+    }
+
+    /* Smooth continuous animation */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+    .footer * {
+  text-transform: none !important;
+}
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #1a1a1a;
+      color: #ddd;
+      font-size: 0.9rem;
+      text-transform: none;
+    }
+
+    .footer-left {
+      flex: 1;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 3rem;
+      padding-right: 50px;
+    }
+
+    .footer-right img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-right img:hover {
+      transform: scale(1.1);
+    }
+
+
+    @media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .carousel-wrapper {
+    width: 80vw;
+  }
+
+  .carousel-slide {
+    width: 20%; /* slightly wider for touch targets */
+  }
+
+  .carousel-slide img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .steps {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-right {
+    padding-right: 0;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .carousel-slide {
+    width: 25%;
+  }
+
+  .carousel-slide img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .steps {
+    font-size: 0.95rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+  }
+
+  .footer-right img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+  </style>
 </head>
 <body>
-  <section class="background">
-    <nav></nav>
-    <div class="image">
-       <div>
-         <h1>Couple's Haven</h1>
-         <h2>"love at first site is 50% looks</h2>
-       </div>
-       <div>
-        <h3>shop with us and have a 50% headstart on your next date!</h3>
-       </div>
-    </div>
-    <div class="bottom">
+  <section class="hero">
+    <h1>Where Do You Belong in Westeros?</h1>
+    <p>Take the test. Pledge your loyalty. Discover your fate.</p>
+    <a href="./questions.html"><button>Face the Trials</button></a>
+  </section>
 
+  <section class="section" id="quiz-info">
+    <h2>The Great Houses</h2>
+    <p>Every banner has a story. Will you rise with the Starks or conquer with the Targaryens?</p>
+    
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        
+        <div class="carousel-slide"><img src="./sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./House GreyJoy.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./targeryan sigil.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./stark sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./lannister sigil.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./arryn sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./baratheon sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./House Martell.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./tyrell sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./frey sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./hightower sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./bolton sigil.jpeg" alt=""></div>
+        
+       
+        
+        
+        
+        
+       
+  
+        <!-- Repeat for seamless loop -->
+        <div class="carousel-slide"><img src="./stark sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./House Lannister.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./House Targaryen.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./arryn sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./baratheon sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./tyrell sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./bolton sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./frey sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./House GreyJoy.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./hightower sigil.jpeg" alt=""></div>
+        <div class="carousel-slide"><img src="./House Martell.jpg" alt=""></div>
+        <div class="carousel-slide"><img src="./sigil.jpeg" alt=""></div>
+      
+      </div>
     </div>
   </section>
+
+  <section class="section">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <p> Answer 9 revealing questions</p>
+      <p> Receive your house assignment</p>
+      <p> Share your destiny with the realm</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">
+      © 2025 fyrelordd. All rights reserved.
+    </div>
+    <div class="footer-right">
+      <a href="https://x.com/fyrelordd" target="_blank">
+        <img src="./twitter-x.svg" alt="Twitter" />
+      </a>
+      <a href="https://www.linkedin.com/in/emeka-chukwuneta-98614329b/" target="_blank">
+        <img src="./linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/fyrelordd" target="_blank">
+        <img src="./github.svg" alt="GitHub" />
+      </a>
+    </div>
+  </footer>
 </body>
 </html>
