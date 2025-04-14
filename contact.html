@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="contact.css">
+  <style>
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: #0b0b0b;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+  }
+  
+  h1 {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .social-link:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+  }
+  
+  .social-link span {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .back-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+.back-link a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.back-link a:hover {
+  color: #fff;
+}
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <p>If you wish to get in touch, send a message through one of the ravens below!</p>
+
+    <div class="social-links">
+      <a href="https://x.com/fyrelordd" target="_blank" class="social-link">
+        <img src="./twitter-x.svg" alt="Twitter">
+
+      </a>
+    
+      <a href="https://www.linkedin.com/in/emeka-chukwuneta-98614329b/" target="_blank" class="social-link">
+        <img src="./linkedin.svg" alt="LinkedIn">
+        
+      </a>
+      <a href="mailto:chukwuneta0205@gmail.com" class="social-link">
+        <img src="./envelope-at.svg" alt="Email">
+    
+      </a>
+    </div>
+
+    <p>Or simply send a raven through the wind, and I'll receive it on the morrow.</p>
+    <div class="back-link">
+        <a href="./index.html">Home</a>
+      </div>
+  </div>
+</body>
+</html>

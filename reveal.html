@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Reveal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      color: white;
+      background-size: contain;
+      background-position: center;
+      animation: backgroundSlider 25s infinite;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @keyframes backgroundSlider {
+      0% {
+        background-image: url('./Nights-watch/pray.jpeg');
+      }
+      25% {
+        background-image: url('./Nights-watch/sth.jpeg');
+      }
+      50% {
+        background-image: url('./Nights-watch/wall.jpeg');
+      }
+      75% {
+        background-image: url('./Nights-watch/out.jpeg');
+      }
+      100% {
+        background-image: url('./Nights-watch/others.jpeg');
+      }
+    }
+
+
+    @keyframes backgroundSliderLannister {
+  0% { background-image: url('./Lannister/castle.jpeg'); }
+  25% { background-image: url('./Lannister/goldenfields.jpeg'); }
+  50% { background-image: url('./Lannister/tywin.jpeg'); }
+  75% { background-image: url('./Lannister/lannister sigil.jpeg'); }
+  100% { background-image: url('./Lannister/redkeep.jpeg'); }
+}
+
+@keyframes backgroundSliderTargaryen {
+  0% { background-image: url('./Targaryen/dragonstone.jpeg'); }
+  25% { background-image: url('./Targaryen/daenerys.jpeg'); }
+  50% { background-image: url('./Targaryen/dragons.jpeg'); }
+  75% { background-image: url('./Targaryen/ironthrone.jpeg'); }
+  100% { background-image: url('./Targaryen/house sigil.jpeg'); }
+}
+
+@keyframes backgroundSliderMartell {
+  0% { background-image: url('./Martell/sun.jpeg'); }
+  25% { background-image: url('./Martell/dorne.jpeg'); }
+  50% { background-image: url('./Martell/princeofoffire.jpeg'); }
+  75% { background-image: url('./Martell/oberyn.jpeg'); }
+  100% { background-image: url('./Martell/dornesun.jpeg'); }
+}
+
+@keyframes backgroundSliderArryn {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderBaratheon {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderFrey {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderGreyjoy {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderHightower {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderStark {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderTully {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderTyrell {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+@keyframes backgroundSliderBolton {
+  0% { background-image: url('./Arryn/eerie.jpeg'); }
+  25% { background-image: url('./Arryn/valley.jpeg'); }
+  50% { background-image: url('./Arryn/wyvern.jpeg'); }
+  75% { background-image: url('./Arryn/house sigil.jpeg'); }
+  100% { background-image: url('./Arryn/mountains.jpeg'); }
+}
+
+
+    .reveal-container {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      max-width: 600px;
+      animation: fade-in 2s ease forwards;
+      opacity: 0;
+    }
+
+    .reveal-container img {
+      width: 150px;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.5em 0;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin: 0.3em 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0.5em 0;
+      opacity: 0.8;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal-container">
+    <h1>The Raven Has Spoken</h1>
+    <img id="house-image" src="./Nights-watch/download.jpeg" alt="House Sigil" />
+    <h2 id="house-name">You Belong To The Night's Watch</h2>
+    <p id="house-traits">Vigilant, Sacrificial, Unyielding</p>
+    <p id="house-quote"><em>"The Sword in the Dark"</em></p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const stored = localStorage.getItem('quizAnswers');
+      const answers = stored ? JSON.parse(stored) : [];
+
+      const tally = {};
+      answers.forEach(house => {
+        house = house.toLowerCase();
+        tally[house] = (tally[house] || 0) + 1;
+      });
+
+      let assignedHouse = 'nights-watch';
+      let max = 0;
+
+      for (let house in tally) {
+        if (tally[house] > max) {
+          max = tally[house];
+          assignedHouse = house;
+        }
+      }
+
+      const names = {
+        stark: 'House Stark',
+        frey: 'House Frey',
+        targaryen: 'House Targaryen',
+        tully: 'House Tully',
+        lannister: 'House Lannister',
+        greyjoy: 'House Greyjoy',
+        baratheon: 'House Baratheon',
+        tyrell: 'House Tyrell',
+        bolton: 'House Bolton',
+        hightower: 'House Hightower',
+        arryn: 'House Arryn',
+        martell: 'House Martell',
+        'nights-watch': "The Night's Watch"
+      };
+
+      const traits = {
+        stark: 'Loyal, Resilient, Bound by Honor',
+        frey: 'Cunning, Opportunistic, Patient',
+        targaryen: 'Fierce, Ambitious, Unyielding',
+        tully: 'Family, Duty, Honor',
+        lannister: 'Powerful, Wealthy, Calculating',
+        greyjoy: 'Bold, Rebellious, Seafaring',
+        baratheon: 'Strong, Hot-blooded, Storm-born',
+        tyrell: 'Wise, Charming, Strategic',
+        bolton: 'Cruel, Cold, Calculating',
+        hightower: 'Ancient, Scholarly, Patient',
+        arryn: 'Noble, Just, Unyielding',
+        martell: 'Proud, Passionate, Patient',
+        'nights-watch': 'Vigilant, Sacrificial, Unyielding'
+      };
+
+      const quotes = {
+        stark: '"Winter is Coming"',
+        frey: '"We Stand Together... Eventually"',
+        targaryen: '"Fire and Blood"',
+        tully: '"Family. Duty. Honor."',
+        lannister: '"A Lannister Always Pays His Debts"',
+        greyjoy: '"What Is Dead May Never Die"',
+        baratheon: '"Ours Is the Fury"',
+        tyrell: '"Growing Strong"',
+        bolton: '"Our Blades Are Sharp"',
+        hightower: '"We Light the Way"',
+        arryn: '"As High as Honor"',
+        martell: '"Unbowed, Unbent, Unbroken"',
+        'nights-watch': '"The Sword in the Dark"'
+      };
+
+      const images = {
+        stark: './Stark/stark sigil.jpeg',
+        frey: './Frey/frey sigil.jpeg',
+        targaryen: './Targaryen/House Targaryen.jpg',
+        tully: './Tully/sigil.jpeg',
+        lannister: './Lannister/House Lannister.jpeg',
+        greyjoy: './Greyjoy/House Greyjoy.jpg',
+        baratheon: './Baratheon/baratheon sigil.jpeg',
+        tyrell: './Tyrell/tyrell sigil.jpeg',
+        bolton: './Bolton/bolton sigil.jpeg',
+        hightower: './Hightower/hightower sigil.jpeg',
+        arryn: './Arryn/arryn sigil.jpeg',
+        martell: './Martell/House Martell.jpg',
+        'nights-watch': './Nights-watch/download.jpeg'
+      };
+
+      // Set house info in the DOM
+      document.getElementById('house-image').src = images[assignedHouse];
+      document.getElementById('house-image').alt = names[assignedHouse];
+      document.getElementById('house-name').textContent = `Welcome To ${names[assignedHouse]}`;
+      document.getElementById('house-traits').textContent = traits[assignedHouse];
+      document.getElementById('house-quote').innerHTML = `<em>${quotes[assignedHouse]}</em>`;
+
+      // Handle background animation
+      const body = document.body;
+
+      switch (assignedHouse) {
+        case 'lannister':
+          body.style.animation = 'backgroundSliderLannister 25s infinite';
+          break;
+        case 'targaryen':
+          body.style.animation = 'backgroundSliderTargaryen 25s infinite';
+          break;
+        case 'martell':
+          body.style.animation = 'backgroundSliderMartell 25s infinite';
+          break;
+        case 'arryn':
+          body.style.animation = 'backgroundSliderArryn 25s infinite';
+          break;
+        case 'baratheon':
+          body.style.animation = 'backgroundSliderBaratheon 25s infinite';
+          break;
+        case 'bolton':
+          body.style.animation = 'backgroundSliderBolton 25s infinite';
+          break;
+        case 'frey':
+          body.style.animation = 'backgroundSliderFrey 25s infinite';
+          break;
+        case 'greyjoy':
+          body.style.animation = 'backgroundSliderGreyjoy 25s infinite';
+          break;
+        case 'hightower':
+          body.style.animation = 'backgroundSliderHightower 25s infinite';
+          break;
+        case 'tully':
+          body.style.animation = 'backgroundSliderTully 25s infinite';
+          break;
+        case 'tyrell':
+          body.style.animation = 'backgroundSliderTyrell 25s infinite';
+          break;
+        case 'stark':
+          body.style.animation = 'backgroundSliderStark 25s infinite';
+          break;
+        case 'nights-watch':
+        default:
+          body.style.animation = 'backgroundSlider 25s infinite';
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
